@@ -4,17 +4,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jiemamy</groupId>
-    <artifactId>master</artifactId>
-    <version>1.1</version>
+    <artifactId>jiemamy-master</artifactId>
+    <version>1.3</version>
   </parent>
   <groupId>org.jiemamy</groupId>
   <artifactId>jiemamy-entity-io</artifactId>
   <name>Jiemamy JPA Entity I/O</name>
   <version>0.0.1-SNAPSHOT</version>
-  <url>http://report.jiemamy.org/jiemamy-entity-io</url>
   <issueManagement>
     <system>JIRA</system>
-    <url>http://jira.jiemamy.org/jira/browse/EIO</url>
+    <url>http://jira.jiemamy.org/browse/EIO</url>
   </issueManagement>
   <ciManagement>
     <system>hudson</system>
@@ -39,9 +38,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>scm:svn:http://svn.sourceforge.jp/svnroot/jiemamy/leto/jiemamy-entity-io/trunk</connection>
-    <developerConnection>scm:svn:svn+ssh://svn.sourceforge.jp/svnroot/jiemamy/leto/jiemamy-entity-io/trunk</developerConnection>
-    <url>http://svn.sourceforge.jp/cgi-bin/viewcvs.cgi/leto/jiemamy-entity-io/trunk/?root=jiemamy</url>
+    <connection>scm:svn:http://svn.jiemamy.org/products/leto/jiemamy-entity-io/trunk</connection>
+    <developerConnection>scm:svn:http://svn.jiemamy.org/products/leto/jiemamy-entity-io/trunk</developerConnection>
+    <url>http://fisheye.jiemamy.org/browse/leto/jiemamy-entity-io/trunk/</url>
   </scm>
   <repositories>
     <repository>
@@ -54,7 +53,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.5</version>
+      <version>4.8.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
