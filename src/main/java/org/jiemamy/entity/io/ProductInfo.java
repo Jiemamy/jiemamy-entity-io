@@ -21,8 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.jiemamy.exception.JiemamyError;
-
 /**
  * プロダクト情報。
  * 
@@ -30,66 +28,6 @@ import org.jiemamy.exception.JiemamyError;
  */
 public class ProductInfo {
 	
-	/**
-	 * プロダクト情報のホルダ。
-	 * 
-	 * @author j5ik2o
-	 */
-	protected static class ProductInfoHolder {
-		
-		/** POMのプロパティファイルのパス */
-		protected static final String POM_PROPERTIES_PATH =
-				"META-INF/maven/org.jiemamy/jiemamy-entity-io/pom.properties";
-		
-		/** プロダクト情報 */
-		protected static final ProductInfo PRODUCT_INFO = createProductInfo();
-		
-
-		/**
-		 * プロダクト情報を取得する。
-		 * 
-		 * @return プロダクト情報
-		 */
-		protected static ProductInfo createProductInfo() {
-			Properties props = loadProperties();
-			return new ProductInfo(props.getProperty("version"), props.getProperty("groupId"), props
-				.getProperty("artifactId"));
-		}
-		
-		/**
-		 * プロパティをロードし取得する。
-		 * 
-		 * @return プロパティ
-		 */
-		protected static Properties loadProperties() {
-			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(POM_PROPERTIES_PATH);
-			Properties props = new Properties();
-			if (is != null) {
-				try {
-					props.load(is);
-				} catch (IOException e) {
-					e.printStackTrace();
-				} finally {
-					try {
-						is.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-			return props;
-		}
-		
-		/**
-		 * インスタンスを生成する。
-		 * 
-		 */
-		protected ProductInfoHolder() {
-			throw new JiemamyError("不到達ポイント");
-		}
-	}
-	
-
 	/** プロダクト名 */
 	protected static final String PRODUCT_NAME = "Jiemamy EntityIO";
 	
@@ -177,6 +115,64 @@ public class ProductInfo {
 	 */
 	public String getVersion() {
 		return version;
+	}
+	
+
+	/**
+	 * プロダクト情報のホルダ。
+	 * 
+	 * @author j5ik2o
+	 */
+	protected static class ProductInfoHolder {
+		
+		/** POMのプロパティファイルのパス */
+		protected static final String POM_PROPERTIES_PATH =
+				"META-INF/maven/org.jiemamy/jiemamy-entity-io/pom.properties";
+		
+		/** プロダクト情報 */
+		protected static final ProductInfo PRODUCT_INFO = createProductInfo();
+		
+
+		/**
+		 * プロダクト情報を取得する。
+		 * 
+		 * @return プロダクト情報
+		 */
+		protected static ProductInfo createProductInfo() {
+			Properties props = loadProperties();
+			return new ProductInfo(props.getProperty("version"), props.getProperty("groupId"), props
+				.getProperty("artifactId"));
+		}
+		
+		/**
+		 * プロパティをロードし取得する。
+		 * 
+		 * @return プロパティ
+		 */
+		protected static Properties loadProperties() {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(POM_PROPERTIES_PATH);
+			Properties props = new Properties();
+			if (is != null) {
+				try {
+					props.load(is);
+				} catch (IOException e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						is.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			return props;
+		}
+		
+		/**
+		 * インスタンスを生成する。
+		 */
+		protected ProductInfoHolder() {
+		}
 	}
 	
 }
