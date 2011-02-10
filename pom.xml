@@ -43,13 +43,6 @@
     <developerConnection>scm:svn:http://svn.jiemamy.org/products/leto/jiemamy-entity-io/trunk</developerConnection>
     <url>http://fisheye.jiemamy.org/browse/leto/jiemamy-entity-io/trunk</url>
   </scm>
-  <repositories>
-    <repository>
-      <id>jiemamy.org</id>
-      <name>Jiemamy Repository</name>
-      <url>http://maven.jiemamy.org/release</url>
-    </repository>
-  </repositories>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -129,4 +122,11 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>jiemamy.org-release</id>
+      <name>Jiemamy Repository</name>
+      <url>http://maven.jiemamy.org/release</url>
+    </repository>
+  </repositories>
 </project>
